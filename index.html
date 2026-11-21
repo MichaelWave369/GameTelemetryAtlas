@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Open-source, source-backed atlas of game telemetry and behavioral profiling disclosures. No speculation presented as fact.">
+  <title>Game Telemetry Atlas | Evidence Over Outrage</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script defer src="assets/atlas-data.js"></script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon">G<span>T</span>A</span><span>GAME TELEMETRY<br><b>ATLAS</b></span></div>
+      <nav aria-label="Main navigation"><a href="#explore">Explore</a><a href="#method">Methodology</a><a href="#lab">Field lab</a><a href="#contribute">Contribute</a></nav>
+      <a class="tiny-link" href="data/atlas.json" download>Open dataset ↗</a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="eyebrow"><span class="pulse"></span> OPEN RESEARCH • INITIAL RELEASE / 21 NOV 2026</div>
+        <h1 id="hero-heading">What does your<br><span>game know about you?</span></h1>
+        <p class="lede">A public evidence ledger for gameplay telemetry, player profiling, monetization algorithms, and data sharing. We verify the claim, identify the source, and show what <em>isn't</em> proven.</p>
+        <div class="hero-actions"><a class="button primary" href="#explore">Explore the evidence <span aria-hidden="true">↗</span></a><a class="button quiet" href="#method">How we verify →</a></div>
+        <div class="micro-note">Privacy-first by design. No analytics. No tracking. No accounts. Just public evidence.</div>
+        <div class="hero-orbit orbit1" aria-hidden="true"></div><div class="hero-orbit orbit2" aria-hidden="true"></div><div class="hero-orbit orbit3" aria-hidden="true"></div>
+      </section>
+
+      <section class="stat-grid" aria-label="Atlas status">
+        <div class="stat"><span class="stat-number" id="count-findings">10</span><span class="stat-label">EVIDENCE ENTRIES</span><span class="stat-sub">Not a total of affected games</span></div>
+        <div class="stat"><span class="stat-number" id="count-source-backed">8</span><span class="stat-label">SOURCE-BACKED FINDINGS</span><span class="stat-sub">Official disclosures or features</span></div>
+        <div class="stat"><span class="stat-number amber" id="count-allegations">1</span><span class="stat-label">UNVERIFIED ALLEGATIONS</span><span class="stat-sub">Visibly separated from findings</span></div>
+        <div class="stat"><span class="stat-number teal" id="count-lens">0</span><span class="stat-label">VERIFIED LENS GAMES</span><span class="stat-sub">No authenticated evidence yet</span></div>
+      </section>
+
+      <section class="briefing" aria-label="Research principles"><div class="brief-icon">i</div><div><strong>Read this before drawing conclusions.</strong> A privacy policy shows what a company <em>discloses or may do</em>; it is not a packet capture of every game. A system used for anti-cheat, AI opponents, or offers is not automatically a psychological profile sold to insurers. <a href="#method">See evidence definitions.</a></div></section>
+
+      <section id="explore" class="section findings" aria-labelledby="explore-heading">
+        <div class="section-head"><div><div class="section-kicker">01 / THE PUBLIC LEDGER</div><h2 id="explore-heading">Explore the evidence</h2><p>Filter each claim by company, evidence level, or subject. Every entry exposes its supporting documents and limitations.</p></div><button class="button small" id="export-csv" type="button">Export filtered CSV ↧</button></div>
+        <div class="filters"><label class="search-wrap"><span class="sr-only">Search findings</span><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search companies, games, topics or disclosures..." autocomplete="off"></label><label><span class="sr-only">Company</span><select id="company"><option value="all">All companies</option></select></label><label><span class="sr-only">Evidence type</span><select id="status"><option value="all">All evidence levels</option></select></label><label><span class="sr-only">Topic</span><select id="topic"><option value="all">All topics</option></select></label><button class="reset" id="reset" type="button">Reset</button></div>
+        <div class="results-line"><span id="result-count" aria-live="polite"></span><span class="key"><i class="dot official"></i> Official disclosure / feature <i class="dot uncertainty"></i> Unverified</span></div>
+        <div id="records" class="record-grid" aria-live="polite"></div>
+        <p id="empty" class="empty" hidden>No matching evidence. Try clearing the filters.</p>
+      </section>
+
+      <section id="method" class="section method" aria-labelledby="method-heading"><div class="section-kicker">02 / PROOF BEFORE CLAIMS</div><h2 id="method-heading">Our evidence standard</h2><p class="section-intro">A dramatic rumor isn't a finding. And a broad corporate policy shouldn't be mistaken for proof that a specific title uses a specific algorithm.</p>
+        <div class="method-grid">
+          <div class="method-card"><span class="number">01</span><h3>Document the statement</h3><p>Record an official policy, product document, reproducible technical test, or attributable first-hand evidence. Include a stable URL and review date.</p></div>
+          <div class="method-card"><span class="number">02</span><h3>Label the scope</h3><p>Is the evidence about a platform, company, service, game, or specific technical system? Never promote one level of evidence to another.</p></div>
+          <div class="method-card"><span class="number">03</span><h3>State the limit</h3><p>Each record contains both what the evidence supports and what remains unknown. Absence of evidence isn't evidence of absence.</p></div>
+          <div class="method-card"><span class="number">04</span><h3>Invite reproducibility</h3><p>Publish redacted test protocols, timestamps, environmental details and hashes. Protect usernames, access tokens, bystanders and minors.</p></div>
+        </div>
+        <div class="scale"><h3>Evidence labels</h3><div><span class="status-chip documented">Documented game feature</span><p>An official source describes a capability in a named game. Does not establish every internal data flow.</p></div><div><span class="status-chip official">Official disclosure</span><p>A public policy or agreement states categories or possible uses at platform/publisher scope.</p></div><div><span class="status-chip context">Context only</span><p>Relevant corporate/platform link but no direct telemetry conclusion about the named game.</p></div><div><span class="status-chip allegation">Unverified allegation</span><p>Someone has made a claim. It must not be counted as a confirmed deployment.</p></div></div>
+      </section>
+
+      <section id="lab" class="section lab" aria-labelledby="lab-heading"><div class="section-kicker">03 / REPRODUCIBLE FIELD LAB</div><h2 id="lab-heading">Observe, don't assume.</h2><div class="lab-layout"><div><p>Want to audit a game you own? Start with destination metadata and compare network connections during a controlled test. Never publish an unredacted capture or bypass anti-cheat.</p><ol><li><b>Define the scope.</b> Write down the exact title, version, platform, account type and test date.</li><li><b>Establish baseline.</b> Record idle-system network activity before opening the launcher.</li><li><b>Capture safely.</b> Observe connections using Windows Resource Monitor or Wireshark on systems you control. Avoid decrypted login/session data.</li><li><b>Compare phases.</b> Repeat menu, idle-game, active-play and shutdown sessions while noting launcher and OS traffic.</li><li><b>Document uncertainty.</b> Domains and byte counts cannot prove encrypted payload meaning or server-side inferences.</li><li><b>Redact before sharing.</b> Remove IPs, IDs, usernames, tokens, chat/audio, precise location and information about other people.</li></ol><a class="button quiet outlined" href="docs/FIELD-LAB.md">Open the complete field protocol →</a></div><aside><div class="terminal"><div class="terminal-top"><span></span><span></span><span></span><small>field-notes.txt</small></div><pre>CASE ID       GTA-TEST-0001
+GAME          [title + version]
+PLATFORM      [PC / Xbox / ...]
+METHOD        OS-level observation
+BASELINE      10 min idle
+GAME MENU     10 min
+GAME ACTIVE   10 min
+RAW IDENTIFIERS   REDACTED
+PAYLOAD CONTENT   UNKNOWN
+INFERENCES       NOT ESTABLISHED</pre></div><p class="lab-note">Example only. No actual game traffic was collected for this release.</p></aside></div></section>
+
+      <section id="contribute" class="section contribute" aria-labelledby="contribute-heading"><div class="section-kicker">04 / COMMUNITY SCIENCE</div><h2 id="contribute-heading">Make claims auditable.</h2><p class="section-intro">This atlas is an open-source starter designed to be corrected. Bring primary sources, documented tests, or careful questions. No exposed account data, no harassment, no fabricated certainty.</p><div class="contribute-actions"><a class="button primary" href="docs/SUBMISSION-TEMPLATE.md">Submission template ↗</a><a class="button quiet outlined" href="data/atlas.json" download>Download JSON dataset ↧</a><a class="button quiet outlined" href="docs/DATA-RIGHTS.md">Player data rights →</a></div></section>
+    </main>
+    <footer><div><strong>GAME TELEMETRY ATLAS</strong><p>Evidence over outrage. Players over profiling.</p></div><div><span id="last-updated">As of November 21, 2026</span><p>Independent research starter · v0.1.0</p></div><p class="fineprint">This is neither a finding of wrongdoing nor legal advice. Sources can change. This project is not affiliated with Microsoft, Take-Two or the publishers listed.</p></footer>
+  </div>
+</body>
+</html>
