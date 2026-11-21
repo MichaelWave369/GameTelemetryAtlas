@@ -20,9 +20,9 @@ The interface counts **evidence entries**, not every game collecting gameplay da
 
 ## Open the website
 
-**Live atlas (GitHub Pages):** https://michaelwave369.github.io/GameTelemetryAtlas/
+**GitHub Pages URL (once enabled):** https://michaelwave369.github.io/GameTelemetryAtlas/
 
-No local server is required. You can browse the research in any modern browser, including your phone. The entire site is static and has no tracker, account, or database.
+This site is designed for GitHub Pages hosting from the `main` branch root. The Pages publishing setting has not yet been independently verified. Once Pages is enabled, no local server is required and the atlas works in modern desktop and phone browsers. The static site uses no tracker, account or database.
 
 ## Edit or add a finding
 
